@@ -1,0 +1,153 @@
+{% extends "base/base.twig" %}
+{% from "components/button.twig" import button %}
+{% from "components/button.twig" import buttonHollow %}
+{% from "components/hero.twig" import hero %}
+{% from "components/imagetext.twig" import imagetext %}
+{% block main %}
+  {{hero(hero.title, hero.text, hero.image)}}
+  
+  <section class="c-container--small py-8 lg:py-12">
+    <h2 class="mb-2">Typography</h2>
+    <div class="text-5xl xl:text-8xl font-bold uppercase">This is Hero Title</div>
+    <div class="c-content">
+      {{content}}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="c-container--small">
+    <h2 class="h2 !mb-8">Colors</h2>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-12">
+        <div class="rounded-sm w-full aspect-square bg-white border border-black"></div>
+        <div class="rounded-sm w-full aspect-square bg-black"></div>
+        <div class="rounded-sm w-full aspect-square bg-gray"></div>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-12 mt-12">
+        <div class="rounded-sm w-full aspect-square bg-primary"></div>
+        <div class="rounded-sm w-full aspect-square bg-secondary"></div>
+        <div class="rounded-sm w-full aspect-square bg-lightblue"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="c-container--small">
+      <h2 class="h2 !mb-8">Fonts</h2>
+      
+      <div class='font-kanit my-12'>
+        <p>Kanit</p>
+        <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis magnam sint, veniam aperiam eius fuga possimus, odio natus ea voluptatum quae nobis repellat aliquam quos, ex fugit quibusdam id cumque!
+        </p>
+        <p>
+        LOREM IPSUM DOLOR SIT, AMET CONSECTETUR ADIPISICING ELIT. OMNIS MAGNAM SINT, VENIAM APERIAM EIUS FUGA POSSIMUS, ODIO NATUS EA VOLUPTATUM QUAE NOBIS REPELLAT ALIQUAM QUOS, EX FUGIT QUIBUSDAM ID CUMQUE!
+        </p>
+      </div>
+      <div class='font-bitter my-12'>
+        <p>Bitter</p>
+        <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis magnam sint, veniam aperiam eius fuga possimus, odio natus ea voluptatum quae nobis repellat aliquam quos, ex fugit quibusdam id cumque!
+        </p>
+        <p>
+        LOREM IPSUM DOLOR SIT, AMET CONSECTETUR ADIPISICING ELIT. OMNIS MAGNAM SINT, VENIAM APERIAM EIUS FUGA POSSIMUS, ODIO NATUS EA VOLUPTATUM QUAE NOBIS REPELLAT ALIQUAM QUOS, EX FUGIT QUIBUSDAM ID CUMQUE!
+        </p>
+      </div>
+      <div class='font-ibm my-12'>
+        <p>IBM Plex Serif</p>
+        <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis magnam sint, veniam aperiam eius fuga possimus, odio natus ea voluptatum quae nobis repellat aliquam quos, ex fugit quibusdam id cumque!
+        </p>
+        <p>
+        LOREM IPSUM DOLOR SIT, AMET CONSECTETUR ADIPISICING ELIT. OMNIS MAGNAM SINT, VENIAM APERIAM EIUS FUGA POSSIMUS, ODIO NATUS EA VOLUPTATUM QUAE NOBIS REPELLAT ALIQUAM QUOS, EX FUGIT QUIBUSDAM ID CUMQUE!
+        </p>
+      </div>
+
+      <div class='font-raleway my-12'>
+        <p>Raleway</p>
+        <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis magnam sint, veniam aperiam eius fuga possimus, odio natus ea voluptatum quae nobis repellat aliquam quos, ex fugit quibusdam id cumque!
+        </p>
+        <p>
+        LOREM IPSUM DOLOR SIT, AMET CONSECTETUR ADIPISICING ELIT. OMNIS MAGNAM SINT, VENIAM APERIAM EIUS FUGA POSSIMUS, ODIO NATUS EA VOLUPTATUM QUAE NOBIS REPELLAT ALIQUAM QUOS, EX FUGIT QUIBUSDAM ID CUMQUE!
+        </p>
+      </div>
+
+      <div class='font-lato my-12'>
+        <p>Lato</p>
+        <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis magnam sint, veniam aperiam eius fuga possimus, odio natus ea voluptatum quae nobis repellat aliquam quos, ex fugit quibusdam id cumque!
+        </p>
+        <p>
+        LOREM IPSUM DOLOR SIT, AMET CONSECTETUR ADIPISICING ELIT. OMNIS MAGNAM SINT, VENIAM APERIAM EIUS FUGA POSSIMUS, ODIO NATUS EA VOLUPTATUM QUAE NOBIS REPELLAT ALIQUAM QUOS, EX FUGIT QUIBUSDAM ID CUMQUE!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="c-container--small">
+      <h2 class="h2 !mb-8">Buttons</h2>
+      {{button('https://www.andberry.me/','Contact the Berry!')}}
+      {{buttonHollow('https://www.andberry.me/','Contact the Hollow!')}}
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="c-container--small">
+      <h2>Timeline</h2>
+      <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical m-0 mt-12">
+        <li class="m-0 p-0 gap-2">
+          <div class="timeline-start !self-start !-mt-2 md:-mt-1">
+            <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center">1</div>
+          </div>
+          <div class="timeline-middle">
+            <div class="rounded-full w-4 h-4 bg-secondary"></div>
+          </div>
+          <div class="timeline-end md:text-start mb-10">
+            <h3 class="text-lg font-black mt-1">First Macintosh computer</h3>
+            <div class="uppercase text-base leading-tight">Esse eum est eos veniam impedit quisquam dolorem deserunt.</div>
+            <div class="text-base mt-3">
+              The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh personal computer. It played a pivotal role in establishing desktop publishing as a general office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed in a beige case with integrated carrying handle; it came with a keyboard and single-button mouse.
+            </div>
+          </div>
+          <hr class="bg-secondary"/>
+        </li>
+        <li class="m-0 p-0 gap-2">
+          <hr class="bg-secondary"/>
+          <div class="timeline-start !self-start -mt-1">
+            <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center">2</div>
+          </div>
+          <div class="timeline-middle">
+            <div class="rounded-full w-4 h-4 bg-secondary"></div>
+          </div>
+          <div class="timeline-end md:text-start mb-10">
+          <h3 class="text-lg font-black mt-1">iPod</h3>
+            <div class="uppercase text-base leading-tight">Rerum ducimus voluptatem sint consequatur sit numquam veritatis.</div>
+            <div class="text-base mt-3">
+              The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh personal computer. It played a pivotal role in establishing desktop publishing as a general office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed in a beige case with integrated carrying handle; it came with a keyboard and single-button mouse.
+            </div>
+          </div>
+          <hr class="bg-secondary"/>
+        </li>
+        <li class="m-0 p-0 gap-2">
+          <hr class="bg-secondary" />
+          <div class="timeline-start !self-start -mt-1">
+            <div class="w-16 h-16 rounded-full bg-primary text-white flex items-center justify-center">3</div>
+          </div>
+          <div class="timeline-middle">
+            <div class="rounded-full w-4 h-4 bg-primary"></div>
+          </div>
+          <div class="timeline-end md:text-start mb-10">
+          <h3 class="text-lg font-black mt-1">iPhone</h3>
+            <div class="uppercase text-base leading-tight">Consectetur qui architecto aut reiciendis molestiae dicta pariatur odio qui.</div>
+            <div class="text-base mt-3">
+              The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh personal computer. It played a pivotal role in establishing desktop publishing as a general office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed in a beige case with integrated carrying handle; it came with a keyboard and single-button mouse.
+            </div>
+          </div>
+          <hr />
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+{% endblock %}

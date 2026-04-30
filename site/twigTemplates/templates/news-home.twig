@@ -1,0 +1,36 @@
+{% extends "base/base.twig" %}
+{% from "components/hero.twig" import hero %}
+{% from "components/button.twig" import ctaLink %}
+
+{% block main %}
+  {{hero(hero.title, hero.subtitle, hero.image)}}
+  <section>
+    <div class="py-16">
+      <div class="c-container--small">
+        {% if news %}          
+            <ul class="md:grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 list-none m-0 p-0">
+            {% for item in news %}
+              <li class="md:grid grid-rows-subgrid row-span-3 gap-0 m-0 p-0 mb-16 md:mb-0">
+                <div class="border-3 border-black0 bg-primary text-white">
+                  <div class="aspect-video">
+                    <a href="{{item.url}}" class="block overflow-hidden group w-full h-full">
+                      <img class="block w-full h-full object-cover object-center group-hover:opacity-60 ease-linear duration-100 transition-all" src="{{item.image.src}}" alt="{{item.image.alt}}">
+                    </a>
+                  </div>
+                  
+                  <div class="py-4 px-5 ">
+                    <a href="{{item.url}}"><h3 class="text-sm font-normal m-0 nrmal-case">{{item.title}}</h3></a>
+                  </div>
+                </div>
+                <div class=" flex justify-end">
+                  {{ctaLink(item.url,'Read More')}}
+                </div>
+              </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+      </div>
+    </div>
+    
+  </section>
+{% endblock %}

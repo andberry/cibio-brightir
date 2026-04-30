@@ -1,0 +1,28 @@
+{% macro imagetext(title, text, image, imageposition) %}
+	<section class="c-imagetext relative py-12 lg:pt-20 lg:pb-40 z-0">
+	
+		<div class="c-container lg:grid grid-cols-6">
+			{% if imageposition == '2' %}
+				<div class="col-span-3 text-right">
+					<div class="bg-primary p-6 lg:p-8 xl:p-16 h-full lg:relative lg:top-16 lg:left-16 text-white">
+						<h3 class="mb-6 mt-0">{{title}}</h3>
+						{{text}}
+					</div>
+				</div>
+				<div class="col-span-3">
+					<img src="{{image.url}}" alt="" class="w-full h-full object-cover object-center">
+				</div>
+			{% else %}
+				<div class="col-span-3">
+					<img src="{{image.url}}" alt="" class="w-full h-full object-cover object-center">
+				</div>
+				<div class="col-span-3">
+					<div class="bg-primary p-6 lg:p-8 xl:p-16 h-full lg:relative lg:top-16 lg:right-16 text-white">
+						<h3 class="mb-6 mt-0">{{title}}</h3>
+						{{text}}
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</section>
+{% endmacro %}

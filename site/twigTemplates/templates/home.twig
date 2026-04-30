@@ -1,0 +1,69 @@
+{% extends "base/base.twig" %}
+{% from "components/hero.twig" import hero %}
+{% from "components/button.twig" import buttonHollow %}
+{% from "components/imagetext.twig" import imagetext %}
+{% from "components/partners.twig" import partnersGrid %}
+
+{% block main %}
+  {{hero(hero.title, hero.subtitle, hero.image)}}
+
+    {#
+    <section class="c-container--small my-12 lg:my-32">
+      <div class="prose prose-lg max-w-none">
+        {{intro}}
+      </div>
+    </section>
+    #}
+      
+    {# Goals #}
+    {% if goals.title and goals.items %}
+      <section class="c-container my-12 lg:my-32 text-center">
+        <h2 class="text-center mb-12">{{goals.title}}</h2>
+        <div class="md:flex flex-wrap gap-8 lg:gap-12 md:px-0 xl:px-0 xl:gap-16 px-2 sm:px-8 justify-center">
+        {% for item in goals.items %}
+          <div class="md:w-[300px] xl:w-[350px] border-4 border-black0 mb-8 md:mb-0 rounded-full bg-primary text-white aspect-square flex items-center md:items-start justify-center flex-none">
+            <div class="p-8 xl:p-12">
+              <img src="{{item.c_image.src}}" alt="{{item.c_image.alt}}" class="w-12 mx-auto block mb-6">
+              <h3 class="normal-case text-3xl md:text-2xl mt-0 xl:text-3xl">{{item.c_title}}</h3>
+              <div class="mt-2 md:leading-relaxed text-sm sm:text-lg md:text-sm">{{item.c_text}}</div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    {# imagetext section #}
+    {% for item in imagetextsections %}
+      {{imagetext(item.c_title, item.c_text, item.c_image, item.image_position)}}
+    {% endfor %}
+    
+    {# Packages #}
+    <section class="bg-graylight py-12 lg:pb-24 lg:pt-12">
+    <div class="c-container text-center">
+      <h2 class="text-center">Work Packages</h2>
+      <div class="md:flex gap-12 mt-12 md:mt-16 flex-wrap justify-center">
+      {% for item in packages %}
+          <div class="border-t-4 border-black0 mb-12 md:mb-0 flex flex-col md:w-[25%] flex-none">
+            <div class="h-4 bg-primary"></div>
+            <div class="px-6 py-2">
+              <a href="{{item.url}}">
+                <h3 class="normal-case text-2xl mt-0">{{item.title}}</h3>
+                <div class="mt-2 leading-tight text-sm">{{item.teaser}}</div>
+              </a>
+            </div>
+            
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    </section>
+
+    {# Partners #}
+    <section class="my-12 lg:my-24">
+    <div class="c-container--small text-center">
+      <h2 class="text-center mb-12">{{partners.title}}</h2>
+      {{partnersGrid(partners.items)}}
+    </div>
+    </section>
+{% endblock %}

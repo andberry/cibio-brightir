@@ -1,0 +1,17 @@
+{% extends "base/base.twig" %}
+{% from "components/hero.twig" import hero %}
+{% from "components/imagetext.twig" import imagetext %}
+{% block main %}
+  {{hero(hero.title, hero.subtitle, hero.image)}}
+  
+  <section class="c-container py-8 lg:py-12">
+    <h1>{{pageTitle}}</h1>
+    <div>
+      {{content}}
+    </div>
+  </section>
+
+  {% for item in imagetextsections %}
+    {{imagetext(item.c_title, item.c_text, item.c_image, item.image_position)}}
+  {% endfor %}
+{% endblock %}

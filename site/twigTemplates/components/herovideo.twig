@@ -1,0 +1,16 @@
+{% macro hero(title, text, image) %}
+	<section class="c-hero relative pb-24 z-0 h-[90vh] xl:min-h-[800px] flex flex-col-reverse text-white">
+		<div class="w-full">
+			<div class="c-container flex flex-row-reverse text-right">
+				<div class="w-full">
+					<div class="text-5xl xl:text-8xl font-bold mb-2">{{title}}</div>
+					{% if text %}
+						<div class="">{{text}}</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		{# <div class="absolute inset-0 opacity-90 -z-10" style="background-image: url('{{image.url}}');"></div> #}
+		<div class="absolute inset-0 opacity-90 -z-10"><video class="w-full h-full object-cover object-center" autoplay loop src="{{urls.video}}/bgvideo_1080.mov"></video></div>
+	</section>
+{% endmacro %}

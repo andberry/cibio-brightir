@@ -1,0 +1,26 @@
+{% from "./button.twig" import button %}
+
+{% macro hero(title, subtitle, image, ctaUrl, ctaTitle, height) %}
+	{% set bgImage = image ? image.url : '/site/img/hero-default.jpg' %}
+	{% set heightClassesSmall = 'lg:h-[50vh] lg:min-h-[400px] lg:max-h-[500px]' %}
+	{% set heightClassesDefault = 'lg:h-[85vh] lg:min-h-[500px] lg:max-h-[900px]' %}
+	{% set heightClasses = height is same as('small') ? heightClassesSmall : heightClassesDefault %}
+	<section class="c-hero relative pb-14 z-0 aspect-[10/16] sm:aspect-square lg:aspect-auto {{heightClasses}} flex flex-col-reverse text-white">
+		<div class="z-10 absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black0/80 to-black0/0"></div>
+		<div class="z-20 w-full">
+			<div class="c-container flex flex-row-reverse text-right">
+				<div class="w-full lg:w-3/4 xl:w-3/5">
+					<h1>{{title}}</h1>
+					{% if subtitle %}
+						<div class="text-xl">{{subtitle}}</div>
+					{% endif %}
+					{% if ctaUrl and ctaTitle %}
+						{{button(ctaUrl, ctaTitle)}}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		<div class="absolute inset-0 opacity-90 -z-10 bg-black0/50"></div>
+		<div class="absolute inset-0 opacity-90 -z-20 bg-cover bg-center" style="background-image: url('{{bgImage}}');"></div>
+	</section>
+{% endmacro %}

@@ -1,0 +1,49 @@
+{% macro partnersGrid(partners) %}
+{% set firstPartner = partners|first %}
+  
+  <div class="mt-8">
+    {# First partner on separate line #}
+    <div class="md:grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-20 mb-20">
+      <div class="col-start-2 col-span-1 w-1/2 md:w-auto mx-auto">
+        {% if firstPartner.page_url %}
+          <a href="{{firstPartner.page_url}}" class="block">
+        {% endif %}
+        
+        <div class="aspect-[3/1] flex items-center justify-center">
+          <img src="{{firstPartner.logo.src}}" alt="{{firstPartner.title}} logo" class="object-contain object-center w-full h-full">
+        </div>
+        
+        <div class="text-center mt-4 leading-tight uppercase text-sm px-2">
+            {{firstPartner.title}}
+        </div>
+        
+        {% if firstPartner.page_url %}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+    
+    {# All other partners #}
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-20">
+      {% for item in partners|slice(1, length) %}
+        <div>
+          {% if item.page_url %}
+            <a href="{{item.page_url}}" class="block">
+          {% endif %}
+          
+          <div class="aspect-[3/1] flex items-center justify-center">
+            <img src="{{item.logo.src}}" alt="{{item.title}} logo" class="object-contain object-center w-full h-full">
+          </div>
+          
+          <div class="text-center mt-4 leading-tight uppercase text-sm px-2">
+              {{item.title}}
+          </div>
+          
+          {% if item.page_url %}
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endmacro %}

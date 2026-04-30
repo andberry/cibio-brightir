@@ -1,0 +1,54 @@
+<footer id="page-footer" class="text-sm">
+  <div class="bg-graylight">
+    <div class="c-container--large py-12 flex flex-col justify-center gap-8 lg:gap-16 lg:flex-row lg:items-center">
+      <div class="flex-1">{{settings.c_text}}</div>
+      <div class="flex-none lg:w-52 xl:w-64 sm:flex lg:block gap-8 justify-around items-center">
+        <img src="{{settings.logo.src}}" alt="" class="flex-initial w-2/3 sm:w-1/3 mb-8 sm:mb-0 lg:mb-6 lg:w-full mx-auto xl:mx-0">
+        <img src="{{settings.c_image.src}}" alt="" class="flex-initial w-2/3 sm:w-1/3 lg:w-full mx-auto">
+      </div>
+    </div>
+  </div>
+
+  <div class="text-sm bg-white py-2">
+    <div class="c-container--large md:flex justify-between items-center">
+      <div>
+        {{settings.copyright}}
+      </div>
+      
+      <div class="md:flex justify-end items-center gap-12">
+        {% if footerMenu|length > 0 %}
+          <nav class="border border-[tomato]">
+            <ul class="list-none flex gap-4">
+              {% for item in footerMenu %}
+                <li>
+                  <a class="underline underline-offset-4 hover:decoration-pink transition-all duration-200 ease-linear" href="{{item.link_url}}" {% if item.link_blank %}target="_blank"{% endif %}>{{item.title}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+          <span>|</span>
+        {% endif %}
+        <div>
+          <nav>
+            <ul class="list-none md:flex gap-3 m-0 md:text-center items-center">
+              <li class="flex gap-2 items-center p-0">
+                <p>Contact us at 
+                  <a href="mailto:{{settings.contacts_email}}">{{settings.contacts_email}}</a>
+                </p>
+                
+              </li>
+              <li class="p-0">
+                <span class="hidden md:inline-block">|</span>
+              </li>
+              {% if settings.privacy_file %}
+                <li class="p-0">
+                  <a href="{{settings.privacy_file.url}}" target="_blank">Privacy</a>
+                </li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

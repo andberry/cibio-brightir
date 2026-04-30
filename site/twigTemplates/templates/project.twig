@@ -1,0 +1,37 @@
+{% extends "base/base.twig" %}
+{% from "components/hero.twig" import hero %}
+{% from "components/button.twig" import buttonHollow %}
+
+{% block main %}
+  {% if hero.image %}
+    {{hero(hero.title, hero.subtitle, hero.image)}}
+  {% endif %}
+  
+  <section class="c-container--small py-12 lg:py-24">
+    {# <h1 class="text-6xl font-bold mb-2">{{pageTitle}}</h1> #}
+    <div class="prose prose-lg max-w-none">
+      {{intro}}
+    </div>
+  </section>
+
+  {# Packages #}
+    <section class="bg-graylight py-12 lg:pb-24 lg:pt-12">
+    <div class="c-container text-center">
+      <h2 class="text-center">Work Packages</h2>
+      <div class="md:flex gap-12 mt-12 md:mt-16 flex-wrap justify-center">
+      {% for item in packages %}
+          <div class="border-t-4 border-black0 mb-12 md:mb-0 flex flex-col md:w-[25%] flex-none">
+            <div class="h-4 bg-primary"></div>
+            <div class="px-6 py-2">
+              <a href="{{item.url}}">
+                <h3 class="normal-case text-2xl mt-0">{{item.title}}</h3>
+                <div class="mt-2 leading-tight text-sm">{{item.teaser}}</div>
+              </a>
+            </div>
+            
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    </section>
+{% endblock %}

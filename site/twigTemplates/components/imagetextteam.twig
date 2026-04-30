@@ -1,0 +1,23 @@
+{% macro imagetextteam(title, text, image, imageposition) %}
+	{% set imageClasses = imageposition == '2' ? 'md:order-2' : '' %}
+	{% set textClasses = imageposition == '2' ? 'md:order-1 md:left-16 md:text-right' : 'md:right-16 md:text-left' %}
+	{% set imgUrl = image ? image.url : '/site/img/person-placeholder.jpg' %}
+	<section class="c-imagetext relative py-12 md:pt-12 md:pb-28 lg:pt-16 lg:pb-32 z-0">
+		<div class="c-container md:grid grid-cols-6">
+			<div class="col-span-2 {{imageClasses}}">
+				<div class="aspect-square">
+					<img src="{{imgUrl}}" alt="" class="w-full h-full object-cover object-center">
+				</div>
+			</div>
+			<div class="col-span-4 md:relative md:top-16 {{textClasses}}">
+				<div class="bg-primary p-6 md:p-8 xl:p-16 h-full text-white">
+					<h4 class="mb-6 mt-0 normal-case">{{title}}</h4>
+					<div class="prose text-white">
+					{{text}}
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</section>
+{% endmacro %}
