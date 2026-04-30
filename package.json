@@ -1,0 +1,31 @@
+{
+  "name": "cibio-brightir",
+  "version": "1.0.0",
+  "description": "Brightir website",
+  "targets": {
+    "browser": {
+      "distDir": "./site/js/dist/"
+    }
+  },
+  "scripts": {
+    "tailwind:dev": "npx tailwindcss -i ./site/css/src/style.css -o ./site/css/dist/style.css --watch",
+    "tailwind:build": "npx tailwindcss -i ./site/css/src/style.css -o ./site/css/dist/style.css --minify",
+    "js:dev": "parcel watch --target browser ./site/js/src/index.js --dist-dir ./site/js/dist/ --public-url /site/js/",
+    "js:build": "parcel build --target browser ./site/js/src/index.js --no-source-maps --dist-dir ./site/js/dist/ --public-url /site/js/",
+    "dev": "concurrently \"npm:tailwind:dev\" \"npm:js:dev\" \"browser-sync start --https -p https://cibio-brightir.ddev.site/ -f ./site/**/* \" -c bgBlue,bgGreen,bgRed",
+    "build": "concurrently \"npm:tailwind:dev\" \"npm:js:dev\" -c bgBlue,bgGreen"
+  },
+  "author": "Berry (hello@andberry.me)",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "browser-sync": "^3.0.2",
+    "concurrently": "^8.2.2",
+    "parcel": "^2.10.3",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}
