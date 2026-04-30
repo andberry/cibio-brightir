@@ -1,0 +1,5 @@
+.vscode
+.parcel-cache
+node_modules
+site/assets/cache/
+site/assets/logs/
