@@ -15,7 +15,8 @@
   ],
   "require": {
     "php": ">=7.1",
-    "ext-gd": "*"
+    "ext-gd": "*",
+    "twig/twig": "^3.0"
   },
   "autoload": {
     "files": [ "wire/core/ProcessWire.php" ]
