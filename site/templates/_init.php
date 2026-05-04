@@ -1,4 +1,7 @@
 <?php namespace ProcessWire;
+/**
+ * This file is automatically prepended (executed at the beginning) to any rendered template files
+ */
 
 // Twig setup
 $config->twigDir = $config->path('site') . 'twigTemplates/';
@@ -32,7 +35,7 @@ $urls->set('img', 'site/img/'); // relative to site root
 
 $twig->addGlobal('settings', $pages->get('/site-settings'));
 $twig->addGlobal('mainMenu', $pages->get('/mainmenu')->children());
-$twig->addGlobal('footerMenu', $pages->get('/footermenu')->children());
+// $twig->addGlobal('footerMenu', $pages->get('/footermenu')->children());
 
 
 // template vars here
