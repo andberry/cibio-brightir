@@ -16,6 +16,7 @@ module.exports = {
       figtree: ["Figtree", "sans-serif"],
       outfit: ["Outfit", "sans-serif"],
       inter: ["Inter", "sans-serif"],
+      ibm: ["IBM Plex Serif", "serif"]
     },
     extend: {
       boxShadow: {
