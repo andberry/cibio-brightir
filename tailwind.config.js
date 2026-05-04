@@ -9,17 +9,12 @@ module.exports = {
       black: "#222222",
       graylight: "#EFEFEF",
       gray: "#333",
-      pink: "#CD009D",
-      blue: "#04065A",
-      lightblue: "#3A64F5",
-      primary: "#007A9E",
-      secondary: "#00B0C6",
+      primary: "#337D9E", // teal
+      secondary: "#FAE64D", // yellow
     },
     fontFamily: {
-      kanit: ["Kanit", "sans-serif"],
-      lato: ["Lato", "sans-serif"],
-      opensans: ["Open Sans", "sans-serif"],
-      worksans: ["Work Sans", "sans-serif"],
+      figtree: ["Figtree", "sans-serif"],
+      outfit: ["Outfit", "sans-serif"],
       inter: ["Inter", "sans-serif"],
     },
     extend: {

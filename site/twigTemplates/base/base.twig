@@ -5,23 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/site/css/dist/style.css" rel="stylesheet">
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Inter:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </style>
     <script defer src="/site/js/dist/index.js" /></script>
-    <title>OMICSENS</title>
+    <title>BRIGHTIR</title>
     {% block extrahead %}{% endblock %}
   </head>
-  <body class="text-black bg-white font-worksans leading-loose">
+  <body class="bg-white font-figtree text-black leading-loose">
     {% include "base/header.twig" %}
     <main id="page-main">
-      {% block main %}
-        <section class="c-container py-8 lg:py-12">
-          <h1>This is base template</h1>
-        </section>
-      {% endblock %}
+      {% block main %}{% endblock %}
     </main>
     {% include "base/footer.twig" %}
   </body>

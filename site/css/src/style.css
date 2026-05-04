@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Outfit:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   .c-content a {
-    @apply underline decoration-2 underline-offset-4 decoration-secondary hover:decoration-lightblue transition-all duration-200 ease-linear text-secondary hover:text-lightblue;
+    @apply underline decoration-2 underline-offset-4 decoration-primary hover:decoration-primary transition-all duration-200 ease-linear text-secondary hover:text-primary;
   }
 
   ul {
@@ -24,7 +26,7 @@
   h4,
   h5,
   h6 {
-    @apply uppercase font-worksans font-medium;
+    @apply uppercase font-outfit font-black tracking-[-1px];
   }
   h1 {
     @apply text-4xl md:text-6xl xl:text-7xl mb-2;
@@ -68,7 +70,7 @@
 
 @layer utilities {
   .is-active {
-    @apply text-pink;
+    @apply text-primary;
   }
 }
 

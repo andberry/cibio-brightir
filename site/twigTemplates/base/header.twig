@@ -1,6 +1,7 @@
-<header id="page-header" class="py-3 fixed top-0 inset-x-0 bg-white z-10 uppercase shadow-md">
-  <div class="c-container--large flex justify-between items-center">
-    {# Logo #}
+<header id="page-header" class="py-1 fixed top-0 inset-x-0 bg-white z-10 uppercase shadow-md">
+  <div class="c-container flex justify-between items-center">
+    {# Logo and nav #}
+    <div class="flex items-center gap-8">
     <div class="w-48 md:w-64">
       <a href="/">
         <img src="{{settings.logo.src}}" alt="" class="w-full">
@@ -15,7 +16,7 @@
           {% for item in mainMenu %}
             <li class="group relative m-0 p-0">
               <a href="{{item.link_url}}"
-              class="hover:text-secondary ease-linear transition-all duration-200 p-2 block text-sm xl:text-base"
+              class="hover:text-primary ease-linear transition-all duration-100 p-2 block text-sm xl:text-base"
                 {% if item.link_blank %}target="_blank"{% endif %}
                 {% if item.link_url == page.url %} class="is-active" {% endif %}
               >
@@ -42,6 +43,7 @@
           {% endfor %}
         </ul>
       </nav> 
+    </div>
     </div>
 
     {# Mobile menu triggered by a peer hidden checkbox #}
