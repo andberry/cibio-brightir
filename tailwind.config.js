@@ -1,22 +1,40 @@
-const colors = require("tailwindcss/colors");
+const brandColors = {
+  teal: {
+    50:  '#EFF7FA',
+    100: '#D8ECF3',
+    200: '#B0D3E1',
+    300: '#7DB5CB',
+    400: '#4D97B5',
+    500: '#327E9E',
+    600: '#255774',
+    700: '#1E4159',
+    800: '#162E3D',
+    900: '#0D1F28',
+  },
+  yellow: {
+    DEFAULT: '#FAE731',
+    pale:    '#F4EE96',
+    dark:    '#C4B000',
+  },
+}
 
 module.exports = {
   content: ["./site/twigTemplates/**/*.twig"],
   theme: {
     colors: {
-      white: "#FEFDFD",
+      // base color tokens
+      white: "#FFFFFF",
       black0: "#000000",
-      black: "#222222",
-      graylight: "#EFEFEF",
-      gray: "#333",
-      primary: "#337D9E", // teal
-      secondary: "#FAE64D", // yellow
+      teal: brandColors.teal,
+      yellow: brandColors.yellow,
+
+      // semantic color tokens
+      headings: brandColors.teal[600],
+      body: 'brandColors.teal[700]',
     },
-    fontFamily: {
-      figtree: ["Figtree", "sans-serif"],
-      outfit: ["Outfit", "sans-serif"],
-      inter: ["Inter", "sans-serif"],
-      ibm: ["IBM Plex Serif", "serif"]
+    fontFamily: {  
+      dmsans: ["'DM Sans'", "sans-serif"],
+      outfit: ["Outfit", "sans-serif"]
     },
     extend: {
       boxShadow: {

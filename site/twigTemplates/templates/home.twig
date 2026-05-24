@@ -16,116 +16,151 @@
     #}
       
     {# Goals #}
-    
-      <section class="c-container my-12 lg:my-32">
-        <h2 class="text-center u-bg-brand-gradient mb-12 uppercase border-b-[6px] border-black0">Project Goals</h2>
-        <div class="md:flex flex-wrap gap-8 lg:gap-12 md:px-0 xl:px-0 xl:gap-16 px-2 sm:px-8 justify-between">
-          {% for item in goals.items %}
-            <div class="md:w-[300px] xl:w-[350px] border-4 border-black0 mb-8 md:mb-0 rounded-full bg-primary text-white aspect-square flex items-center md:items-start justify-center flex-none">
-              <div class="p-8 xl:p-12">
-                <img src="{{item.c_image.src}}" alt="{{item.c_image.alt}}" class="w-12 mx-auto block mb-6">
-                <h3 class="normal-case text-3xl md:text-2xl mt-0 xl:text-3xl">{{item.c_title}}</h3>
-                <div class="mt-2 md:leading-relaxed text-sm sm:text-lg md:text-sm">{{item.c_text}}</div>
-              </div>
-            </div>
-          {% endfor %}
-          <div class="md:w-[300px] xl:w-[350px] rounded-tr-2xl rounded-bl-[100px] mb-8 md:mb-0 bg-primary text-white  flex items-center md:items-start justify-center flex-none">
-            <div class="p-8 xl:px-10 xl:py-6">
-              <h3 class="text-3xl md:text-2xl mt-0 xl:text-3xl uppercase">Goal One</h3>
-              <div class="mt-2 md:leading-relaxed text-sm sm:text-lg md:text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-            </div>
-          </div>
-          <div class="md:w-[300px] xl:w-[350px] rounded-tr-2xl rounded-bl-[100px] mb-8 md:mb-0 bg-primary text-white aspect-video flex items-center md:items-start justify-center flex-none">
-            <div class="p-8 xl:px-10 xl:py-6">
-              <h3 class="text-3xl md:text-2xl mt-0 xl:text-3xl uppercase">Goal 2</h3>
-              <div class="mt-2 md:leading-relaxed text-sm sm:text-lg md:text-sm">Lorem ipsum dolor sit amet, </div>
-            </div>
-          </div>
-          <div class="md:w-[300px] xl:w-[350px] rounded-tr-2xl rounded-bl-[100px] mb-8 md:mb-0 bg-primary text-white aspect-video flex items-center md:items-start justify-center flex-none">
-            <div class="p-8 xl:px-10 xl:py-6">
-              <h3 class="text-3xl md:text-2xl mt-0 xl:text-3xl uppercase">Goal Three</h3>
-              <div class="mt-2 md:leading-relaxed text-sm sm:text-lg md:text-sm">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</div>
-            </div>
-          </div>
+    <section class="my-12 lg:my-48 bg-white">
+      <div class="c-container">
+      <div class="flex gap-2 items-center">
+        <div class="h-[3px] w-7 bg-yellow"></div>
+        <span class="eyebrow">Project Goals</span>
+      </div>
+      <h2 class="h2">What we want to achieve</h2>
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-4 mt-8">
+        <div class="relative overflow-hidden rounded-md border border-teal-100 bg-white p-5">
+          <span class="font-outfit absolute right-2 top-0 select-none text-6xl font-extrabold leading-none text-teal-50">
+            01
+          </span>
+          <p class="font-dm mb-0 text-xs font-semibold uppercase tracking-widest text-teal-600">
+            Goal One
+          </p>
+          <h3 class="font-outfit font-medium mb-3 text-[15px] text-teal-900">
+            Broadband Emitter Design
+          </h3>
+          <p class="text-[13px] leading-relaxed text-teal-700 font-normal">
+            Develop MEMS-based IR emitters with wide spectral coverage and low power draw.
+          </p>
         </div>
-      </section>
-    
 
-    {# imagetext section #}
+        <div class="relative overflow-hidden rounded-md border border-teal-100 bg-white p-5">
+          <span class="font-outfit absolute right-2 top-0 select-none text-6xl font-extrabold leading-none text-teal-50">
+            02
+          </span>
+          <p class="font-dm mb-0 text-xs font-semibold uppercase tracking-widest text-teal-600">
+            Goal Two
+          </p>
+          <h3 class="font-outfit font-medium mb-3 text-[15px] text-teal-900">
+            Platform Integration
+          </h3>
+          <p class="font-dm text-xs leading-relaxed text-teal-700">
+            Develop MEMS-based IR emitters with wide spectral coverage and low power draw.
+          </p>
+        </div>
+
+        <div class="relative overflow-hidden rounded-md border border-teal-100 bg-white p-5 border-t-[3px] border-t-yellow">
+          <span class="font-outfit absolute right-2 top-0 select-none text-6xl font-extrabold leading-none text-yellow-pale">
+            03
+          </span>
+          <p class="font-dm mb-0 text-xs font-semibold uppercase tracking-widest text-teal-600">
+            Goal Three
+          </p>
+          <h3 class="font-outfit font-medium mb-3 text-[15px] text-teal-900">
+            Compact Form Factor
+          </h3>
+          <p class="font-dmsans text-xs leading-relaxed text-teal-700">
+            Portable, field-deployable form factor for real-world sensing scenarios.
+          </p>
+        </div>
+
+        <div class="relative overflow-hidden rounded-md border border-teal-100 bg-white p-5">
+          <span class="font-outfit absolute right-2 top-0 select-none text-6xl font-extrabold leading-none text-teal-50">
+            04
+          </span>
+          <p class="font-dm mb-0 text-xs font-semibold uppercase tracking-widest text-teal-600">
+            Goal Four
+          </p>
+          <h3 class="font-outfit font-medium mb-3 text-[15px] text-teal-900">
+            Market
+          </h3>
+          <p class="font-dm text-xs leading-relaxed text-teal-700">
+            Develop MEMS-based IR emitters with wide spectral coverage and low power draw.
+          </p>
+        </div>
+      </div>
+      </div>
+    </section>
+    
     {% for item in imagetextsections %}
       {{imagetext(item.c_title, item.c_text, item.c_image, item.image_position)}}
     {% endfor %}
     
     {# Packages #}
-    <section class="bg-graylight py-12 lg:pb-24 lg:pt-12">
-    <div class="c-container ">
-      <h2 class="u-bg-brand-gradient uppercase border-b-[6px] border-black0">Work Packages</h2>
-      <div class="md:flex gap-12 mt-12 md:mt-16 flex-wrap justify-between">
-      {% for item in packages %}
-          <div class="border-t-4 border-black0 mb-12 md:mb-0 flex flex-col md:w-[25%] flex-none">
-            <div class="h-4 bg-primary"></div>
-            <div class="px-6 py-2">
-              <a href="{{item.url}}">
-                <h3 class="normal-case text-2xl mt-0">{{item.title}}</h3>
-                <div class="mt-2 leading-tight text-sm">{{item.teaser}}</div>
-              </a>
-            </div>
-            
-          </div>
-        {% endfor %}
-        <div class=" mb-12 md:mb-0 flex flex-col md:w-[20%] flex-none">
-          <div class="h-8 u-bg-brand-gradient-solid rounded-bl-2xl rounded-tr-[100px]"></div>
-          <div class="px-6 py-2">
-            <a href="{{item.url}}">
-              <h3 class="text-2xl mt-0 uppercase">Working Package 1</h3>
-              <div class="mt-2 leading-tight text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-            </a>
+  <section class="py-12 lg:py-32 bg-teal-50">
+    <div class="c-container">
+    <div class="flex gap-2 items-center">
+        <div class="h-[3px] w-7 bg-yellow"></div>
+        <span class="eyebrow">Work Packages</span>
+      </div>
+      <h2 class="h2 text-teal-700">Project Structure</h2>
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-4 mt-8">
+        <div class="relative overflow-hidden rounded-md border-x border-b border-teal-100 bg-white border-t-[3px] border-t-teal-500 p-4">
+          <p class="font-dm mb-0 text-xs font-semibold uppercase tracking-widest text-teal-600">
+            WP 1
+          </p>
+          <h3 class="font-outfit font-medium mb-3 text-[15px] text-teal-900">
+            Broadband Emitter Design
+          </h3>
+          <p class="text-[13px] leading-relaxed text-teal-700 font-normal">
+            Develop MEMS-based IR emitters with wide spectral coverage and low power draw. Develop MEMS-based IR emitters with wide spectral coverage and low power draw.
+          </p>
+          <div class="mt-2 text-right">
+          <a class="font-outfit text-xs uppercase mt-3 font-medium text-right inline-block" href="#">Find our more</a>
           </div>
         </div>
-        <div class=" mb-12 md:mb-0 flex flex-col md:w-[20%] flex-none">
-          <div class="h-8 u-bg-brand-gradient-solid rounded-bl-2xl rounded-tr-[100px]"></div>
-          <div class="px-6 py-2">
-            <a href="{{item.url}}">
-              <h3 class="text-2xl mt-0 uppercase">Working Package 2</h3>
-              <div class="mt-2 leading-tight text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-            </a>
-          </div>
+
+        <div class="relative overflow-hidden rounded-md border-x border-b border-teal-100 bg-white border-t-[3px] border-t-teal-500 p-4">
+            <p class="font-dm mb-0 text-xs font-semibold uppercase tracking-widest text-teal-600">
+            WP 2
+          </p>
+          <h3 class="font-outfit font-medium mb-3 text-[15px] text-teal-900">
+            Broadband Emitter Design
+          </h3>
         </div>
-        <div class=" mb-12 md:mb-0 flex flex-col md:w-[20%] flex-none">
-          <div class="h-8 u-bg-brand-gradient-solid rounded-bl-2xl rounded-tr-[100px]"></div>
-          <div class="px-6 py-2">
-            <a href="{{item.url}}">
-              <h3 class="text-2xl mt-0 uppercase">Working Package 3</h3>
-              <div class="mt-2 leading-tight text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-            </a>
-          </div>
+      
+        <div class="relative overflow-hidden rounded-md border-x border-b border-teal-100 bg-white border-t-[3px] border-t-yellow p-4">
+          <p class="font-dm mb-0 text-xs font-semibold uppercase tracking-widest text-teal-600">
+            WP 3
+          </p>
+          <h3 class="font-outfit font-medium mb-3 text-[15px] text-teal-900">
+            Broadband Emitter Design
+          </h3>
         </div>
-        <div class=" mb-12 md:mb-0 flex flex-col md:w-[20%] flex-none">
-          <div class="h-8 u-bg-brand-gradient-solid rounded-bl-2xl rounded-tr-[100px]"></div>
-          <div class="px-6 py-2">
-            <a href="{{item.url}}">
-              <h3 class="text-2xl mt-0 uppercase">Working Package 4</h3>
-              <div class="mt-2 leading-tight text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-            </a>
-          </div>
+
+        <div class="relative overflow-hidden rounded-md border-x border-b border-teal-100 bg-white border-t-[3px] border-t-yellow-pale p-4">
+          <p class="font-dm mb-0 text-xs font-semibold uppercase tracking-widest text-teal-600">
+            WP 4
+          </p>
+          <h3 class="font-outfit font-medium mb-3 text-[15px] text-teal-900">
+            Broadband Emitter Design
+          </h3>
         </div>
       </div>
     </div>
-    </section>
+  </section>
+
+
 
     {# Partners #}
-    <section class="my-12 lg:my-24">
-    <div class="c-container--small text-center">
-      <h2 class="mb-12 u-bg-brand-gradient uppercase border-b-[6px] border-black0">{{partners.title}}</h2>
-      
-      <div class="flex justify-center mt-6 gap-48">
-      <div class="w-[200px]">
-        <img src="/site/assets/files/images/unitrento-logo.jpg" alt="" class="w-full block">
+    <section class="py-12 lg:py-24">
+      <div class="c-container">
+        <div class="flex gap-24 items-center">
+          <h2 class="h3">{{partners.title}}</h2>
+          <div class="flex items-center gap-8">
+            <div class="w-[160px]">
+              <img src="/site/assets/files/images/unitrento-logo.jpg" alt="" class="w-full block">
+            </div>
+            <div class="w-[160px]">
+              <img src="/site/assets/files/images/4k-mems-logo.png" alt="" class="w-full block">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="w-[200px]">
-        <img src="/site/assets/files/images/4k-mems-logo.png" alt="" class="w-full block">
-      </div>
-      </div>
-    </div>
     </section>
 {% endblock %}

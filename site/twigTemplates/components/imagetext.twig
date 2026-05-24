@@ -1,28 +1,40 @@
 {% macro imagetext(title, text, image, imageposition) %}
-	<section class="c-imagetext relative py-12 lg:pt-20 lg:pb-40 z-0">
+	<section class="c-imagetext relative my-12 lg:mt-20 lg:mb-40 z-0 ">
 	
-		<div class="c-container lg:grid grid-cols-6">
+		<div class="c-container">
+			<div class="rounded-md border border-teal-100 overflow-hidden">
+			<div class="lg:grid grid-cols-6">
 			{% if imageposition == '2' %}
-				<div class="col-span-3 text-right">
-					<div class="border-l-4 border-primary p-6 lg:p-8 xl:p-16 h-full lg:relative lg:top-24">
-						<h3 class="mb-6 mt-0 u-bg-brand-gradient">{{title}}</h3>
-						<div class="font-light">{{text}}</div>
+				<div class="col-span-3">
+					<div class=" p-6 lg:p-8 xl:p-16 h-full lg:relative flex flex-col gap-4 justify-center">
+						<div class="h-[3px] w-7 bg-yellow"></div>
+						<p class="font-dmsans text-[12px] font-medium uppercase">
+							About the project
+						</p>
+						<h3 class="h3 mb-4 mt-0">A new generation of broadband IR emitters for generalized sensing</h3>
+						<div>BRIGHTIR brings together photonics researchers, MEMS engineers, and sensing specialists across Europe to develop foundational technology for next-generation IR sensing systems.</div>
 					</div>
 				</div>
-				<div class="col-span-3">
-					<img src="{{image.url}}" alt="" class="w-full h-full object-cover object-center rounded-bl-2xl rounded-tr-[100px]">
+				<div class="col-span-3 ">
+					<img src="{{image.url}}" alt="" class="w-full h-full object-cover object-center ">
 				</div>
 			{% else %}
-				<div class="col-span-3">
-					<img src="{{image.url}}" alt="" class="w-full h-full object-cover object-center rounded-br-2xl rounded-tl-[100px]">
+			<div class="col-span-3 ">
+					<img src="{{image.url}}" alt="" class="w-full h-full object-cover object-center ">
 				</div>
 				<div class="col-span-3">
-					<div class="border-r-4 border-primary p-6 lg:p-8 xl:p-16 h-full lg:relative lg:top-24">
-						<h3 class="mb-6 mt-0">{{title}}</h3>
-						<div class="font-light">{{text}}</div>
+					<div class=" p-6 lg:p-8 xl:p-16 h-full lg:relative flex flex-col gap-4 justify-center">
+						<div class="h-[3px] w-7 bg-yellow"></div>
+						<p class="font-dmsans text-[10px] font-medium uppercase">
+							About the project
+						</p>
+						<h3 class="font-outfit mb-4 text-2xl font-bold leading-tight tracking-tight mt-0">A new generation of broadband IR emitters for generalized sensing</h3>
+						<div>BRIGHTIR brings together photonics researchers, MEMS engineers, and sensing specialists across Europe to develop foundational technology for next-generation IR sensing systems.</div>
 					</div>
 				</div>
 			{% endif %}
+			</div>
+			</div>
 		</div>
 	</section>
 {% endmacro %}

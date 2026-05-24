@@ -3,16 +3,21 @@
 {% macro hero(title, subtitle, image, ctaUrl, ctaTitle, height) %}
 	{% set bgImage = image ? image.url : '/site/img/hero-default.jpg' %}
 	{% set heightClassesSmall = 'lg:h-[50vh] lg:min-h-[400px] lg:max-h-[500px]' %}
-	{% set heightClassesDefault = 'lg:h-screen lg:min-h-[500px]' %}
+	{% set heightClassesDefault = 'lg:h-[85vh] lg:min-h-[500px]' %}
 	{% set heightClasses = height is same as('small') ? heightClassesSmall : heightClassesDefault %}
-	<section class="c-hero relative pb-14 z-0 aspect-[10/16] sm:aspect-square lg:aspect-auto {{heightClasses}} flex flex-col-reverse text-white">
-		<div class="z-10 absolute w-full h-1/2 bottom-0 left-0 bg-gradient-to-t from-black0/80 to-black0/0"></div>
-		<div class="z-20 w-full">
-			<div class="c-container flex flex-row-reverse text-right">
-				<div class="w-full lg:w-3/4 xl:w-3/5">
-					<h1 class="u-bg-brand-gradient">{{title}}</h1>
+	{% set heroTextClasses = height is same as('small') ? 'bottom-16' : 'bottom-48' %}
+	<section class="c-hero relative pb-14 z-0 aspect-[10/16] sm:aspect-square lg:aspect-auto {{heightClasses}} relative">
+		<div class="z-30 absolute w-full h-full bottom-0 left-0 bg-gradient-to-t from-black0/100 to-teal-900/70 via-teal-900/80"></div>
+		<div class="z-40 w-full absolute left-0 {{heroTextClasses}}">
+			<div class="c-container">
+				<div>
+					<h1 class="h1 flex flex-col text-white gap-0">
+						<span>Broadband</span>
+						<span class="text-yellow">Infrared</span>
+						<span>Emitters</span>
+					</h1>
 					{% if subtitle %}
-						<div class="text-xl">{{subtitle}}</div>
+						<div class="mt-8 text-teal-200">{{subtitle}}</div>
 					{% endif %}
 					{% if ctaUrl and ctaTitle %}
 						{{button(ctaUrl, ctaTitle)}}
@@ -20,7 +25,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="absolute inset-0 opacity-90 -z-10 bg-black0/50"></div>
-		<div class="absolute inset-0 opacity-90 -z-20 bg-cover bg-center" style="background-image: url('{{bgImage}}');"></div>
+		<div class="absolute inset-0 -z-30 bg-black0/70"></div>
+		<div class="absolute inset-0 opacity-90 z-10 bg-cover bg-center" style="background-image: url('{{bgImage}}');"></div>
+		<div class="absolute inset-0 z-20">
+			<video class="w-full h-full object-cover object-center" src="/site/assets/videos/bg_video_1.mp4" autoplay loop></video>
+		</div>
+		{% if height is not same as('small') %}
+		<div class="absolute right-4 bottom-2 rotate-90 uppercase text-xs text-teal-300 z-50 origin-top-right flex items-center gap-2">Scroll<span class="w-6 h-[2px] bg-yellow block"></span></div>
+		{% endif %}
 	</section>
 {% endmacro %}
