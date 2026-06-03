@@ -53,3 +53,58 @@ function getPackages($pages) {
   }
   return $packages_data;
 }
+
+function getGoals($pages) {
+  $goals = $pages->find('template=Goal, sort=sort');
+  $goals_data = [];
+  foreach($goals as $item) {
+    $goals_data[] = [
+      'pretitle' => $item->c_subtitle,
+      'title' => $item->title,
+      'number' => $item->c_title,
+      'text' => $item->c_text,
+      'featured' => $item->featured,
+    ];
+  }
+
+  
+  return $goals_data;
+}
+
+function getHighlights($pages) {
+  $items = $pages->find('template=Highlight, sort=sort');
+  $data = [];
+  foreach($items as $item) {
+    $data[] = [
+      'title' => $item->title,
+      'subtitle' => $item->c_subtitle,
+      'featured' => $item->featured,
+      'image' => $item->c_image,
+      'content' => $item->content,
+      'gallery' => $item->image_gallery,
+      'url' => $item->url,
+    ];
+  }
+
+  
+  return $data;
+}
+
+function getHighlightsFeatured($pages) {
+  $items = $pages->find('template=Highlight, featured=1, sort=sort');
+  $data = [];
+  foreach($items as $item) {
+    $data[] = [
+      'title' => $item->title,
+      'subtitle' => $item->c_subtitle,
+      'featured' => $item->featured,
+      'image' => $item->c_image,
+      'content' => $item->content,
+      'gallery' => $item->image_gallery,
+      'url' => $item->url,
+    ];
+  }
+
+  
+  return $data;
+}

@@ -1,0 +1,27 @@
+{% macro highlightcard(url, title, subtitle, image) %}
+	
+<div class="rounded-lg border border-white/[.08] bg-teal-900 overflow-hidden">
+	<div class="relative flex items-center justify-center">
+		<div class="aspect-[5/2] relative">
+			<a href={{url}} class="block w-full h-full group">
+			<image src={{image.url}} class="object-cover object-center block w-full h-full transition-all duration-300 ease-in-out group-hover:scale-105">
+			</a>
+		</div>
+	</div>
+	<!-- Body -->
+	<div class="p-4">
+		<p class="font-dmsans font-medium text-[10px] uppercase tracking-[.08em] text-teal-400/70 mb-1.5">
+			{{subtitle}}
+		</p>
+		<h3 class="font-outfit font-semibold text-[13px] leading-snug text-white/85 mb-2.5">
+			{{title}}
+		</h3>
+		<div class="text-right">
+		<a href={{url}} class="font-dmsans font-medium text-[11px] uppercase tracking-[.06em] text-teal-300">
+			Read more →
+		</a>
+		</div>
+	</div>
+</div>
+
+{% endmacro %}

@@ -10,7 +10,7 @@ $twig = new \Twig\Environment(
     $twigLoader,
     [
         'cache' => $config->paths->cache . 'twig',
-        'debug' => $config->debug,
+        'debug' => true,
         'auto_reload' => $config->debug,
         'strict_variables' => false,
         // comment the following for compatibility with PHP 8.1

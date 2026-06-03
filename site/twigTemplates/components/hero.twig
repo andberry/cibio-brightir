@@ -1,20 +1,24 @@
 {% from "./button.twig" import button %}
 
-{% macro hero(title, subtitle, image, ctaUrl, ctaTitle, height) %}
+{% macro hero(title, subtitle, image, ctaUrl, ctaTitle, height, isHome) %}
 	{% set bgImage = image ? image.url : '/site/img/hero-default.jpg' %}
 	{% set heightClassesSmall = 'lg:h-[50vh] lg:min-h-[400px] lg:max-h-[500px]' %}
-	{% set heightClassesDefault = 'lg:h-[85vh] lg:min-h-[500px]' %}
+	{% set heightClassesDefault = 'lg:h-screen lg:min-h-[500px]' %}
 	{% set heightClasses = height is same as('small') ? heightClassesSmall : heightClassesDefault %}
 	{% set heroTextClasses = height is same as('small') ? 'bottom-16' : 'bottom-48' %}
 	<section class="c-hero relative pb-14 z-0 aspect-[10/16] sm:aspect-square lg:aspect-auto {{heightClasses}} relative">
-		<div class="z-30 absolute w-full h-full bottom-0 left-0 bg-gradient-to-t from-black0/100 to-teal-900/70 via-teal-900/80"></div>
+		<div class="z-30 absolute w-full h-full bottom-0 left-0 bg-gradient-to-t from-black0 to-teal-900/0 via-teal-900/90"></div>
 		<div class="z-40 w-full absolute left-0 {{heroTextClasses}}">
 			<div class="c-container">
 				<div>
 					<h1 class="h1 flex flex-col text-white gap-0">
+						{% if isHome %}
 						<span>Broadband</span>
 						<span class="text-yellow">Infrared</span>
 						<span>Emitters</span>
+						{% else %}
+						{{title }}
+						{% endif %}
 					</h1>
 					{% if subtitle %}
 						<div class="mt-8 text-teal-200">{{subtitle}}</div>
@@ -26,10 +30,7 @@
 			</div>
 		</div>
 		<div class="absolute inset-0 -z-30 bg-black0/70"></div>
-		<div class="absolute inset-0 opacity-90 z-10 bg-cover bg-center" style="background-image: url('{{bgImage}}');"></div>
-		<div class="absolute inset-0 z-20">
-			<video class="w-full h-full object-cover object-center" src="/site/assets/videos/bg_video_1.mp4" autoplay loop></video>
-		</div>
+		<div class="absolute inset-0 opacity-90 z-20 bg-cover bg-center" style="background-image: url('{{bgImage}}');"></div>
 		{% if height is not same as('small') %}
 		<div class="absolute right-4 bottom-2 rotate-90 uppercase text-xs text-teal-300 z-50 origin-top-right flex items-center gap-2">Scroll<span class="w-6 h-[2px] bg-yellow block"></span></div>
 		{% endif %}

@@ -1,0 +1,27 @@
+{% macro goalcard(number, title, pretitle, text, featured) %}
+	
+<div class="relative overflow-hidden rounded-md border border-teal-100 bg-white p-5 border-t-[3px] border-t-yellow">
+	{% if featured %}
+		<span class="font-outfit absolute right-2 top-0 select-none text-6xl font-extrabold leading-none text-yellow-pale">
+			{{ number }}
+		</span>
+		{% else %}
+		<span class="font-outfit absolute right-2 top-0 select-none text-6xl font-extrabold leading-none text-teal-50">
+			{{ number }}
+		</span>
+	{% endif %}
+	
+	<p class="font-dm mb-0 text-xs font-semibold uppercase tracking-widest text-teal-600">
+		{{ pretitle }}
+	</p>
+	<h3 class="font-outfit font-medium mb-3 text-[15px] text-teal-900">
+		{{title }}
+	</h3>
+	<div class="text-[13px] leading-relaxed text-teal-700 font-normal">
+		<p>
+			{{text }}
+		</p>
+	</div>
+</div>
+
+{% endmacro %}
