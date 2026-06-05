@@ -103,3 +103,7 @@
 .mapboxgl-popup-close-button {
   @apply !top-2 !right-3 px-2 py-1;
 }
+
+.u-wysiwyg p {
+  @apply mt-3;
+}

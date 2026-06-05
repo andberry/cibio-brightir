@@ -21,7 +21,7 @@
 						{% endif %}
 					</h1>
 					{% if subtitle %}
-						<div class="mt-8 text-teal-200">{{subtitle}}</div>
+						<div class="mt-2 text-teal-200">{{subtitle}}</div>
 					{% endif %}
 					{% if ctaUrl and ctaTitle %}
 						{{button(ctaUrl, ctaTitle)}}
@@ -30,7 +30,12 @@
 			</div>
 		</div>
 		<div class="absolute inset-0 -z-30 bg-black0/70"></div>
-		<div class="absolute inset-0 opacity-90 z-20 bg-cover bg-center" style="background-image: url('{{bgImage}}');"></div>
+		<div class="absolute inset-0 opacity-90 z-20  bg-cover bg-center" style="background-image: url('{{bgImage}}');"></div>
+		
+		<div class="absolute inset-0 z-20 hidden">
+			<video class="w-full h-full object-cover object-center" src="/site/assets/videos/bg_video_1.mp4" autoplay loop muted></video>
+		</div>
+		
 		{% if height is not same as('small') %}
 		<div class="absolute right-4 bottom-2 rotate-90 uppercase text-xs text-teal-300 z-50 origin-top-right flex items-center gap-2">Scroll<span class="w-6 h-[2px] bg-yellow block"></span></div>
 		{% endif %}

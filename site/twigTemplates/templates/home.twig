@@ -17,9 +17,9 @@
       <span class="eyebrow">Project Goals</span>
     </div>
     <h2 class="h2">What we want to achieve</h2>
-    <div class="grid grid-cols-1 gap-3 sm:grid-cols-3 mt-8">
+    <div class="grid grid-cols-1 gap-3 lg:grid-cols-3 mt-8">
       {% for item in goals %}
-          {{goalcard(item.number, item.title, item.pretitle, item.text, item.featured)}}
+          {{goalcard(item.number, item.title, item.pretitle, item.abstract, item.featured)}}
         {% endfor %}
     </div>
     </div>

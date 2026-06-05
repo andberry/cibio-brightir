@@ -4,7 +4,7 @@ function getHeroFieldset ($page) {
   return [
     'title' => $page->hero_fieldset->c_title,
     'subtitle' => $page->hero_fieldset->c_subtitle,
-    'image' => $page->hero_fieldset->c_image
+    'image' => $page->hero_fieldset->c_image,
   ];
 }
 
@@ -64,6 +64,7 @@ function getGoals($pages) {
       'number' => $item->c_title,
       'text' => $item->c_text,
       'featured' => $item->featured,
+      'abstract' => $item->content
     ];
   }
 

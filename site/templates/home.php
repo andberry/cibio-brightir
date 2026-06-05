@@ -3,7 +3,7 @@ include './utils.php';
 
 $tvars['pageTitle'] = $page->title;
 $tvars['hero'] = getHeroFieldset($page);
-$tvars['intro'] = $page->content;
+// $tvars['content'] = $page->content;
 $tvars['goals'] = getGoals($pages);
 $tvars['partners']['title'] = 'Partners';
 $tvars['partners']['items'] = getPartners($pages);

@@ -1,0 +1,26 @@
+{% extends "base/base.twig" %}
+{% from "components/hero.twig" import hero %}
+{% from "components/button.twig" import buttonHollow %}
+{% from "components/highlightcard.twig" import highlightcard %}
+
+{% block main %}
+  {% if hero_image %}
+    {{hero(title, 'Highlights', hero_image, '', '', 'small')}}
+  {% endif %}
+
+  <section class="bg-graylight py-12 lg:py-24">
+    <div class="c-container--small">
+      <h2 class="h2">{{title}}</h2>
+      <h3 class="h3">{{subtitle}}</h3>
+      <div class="u-wysiwyg mt-12">{{content}}</div>
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {% for item in image_gallery %}
+          <div class="aspect-video rounded-md overflow-hidden">
+            <img src={{item.url}} class="block w-full h-full object-cover object-center" />
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    </div>
+  </section>
+{% endblock %}
