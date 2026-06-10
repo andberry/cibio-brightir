@@ -107,3 +107,16 @@
 .u-wysiwyg p {
   @apply mt-3;
 }
+
+.u-wysiwyg a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: #255774;
+  transition: all 100ms linear;
+  text-decoration-thickness: 2px;
+}
+
+.u-wysiwyg a:hover {
+  color: #255774;
+  text-decoration-thickness: 3px;
+}

@@ -15,7 +15,7 @@
         <nav>
           <ul class="list-none flex gap-3 xl:gap-4 m-0 text-center">
             {% for item in mainMenu %}
-              {% set linkClasses = item.link_url == page.url ? activeLinkClasses : defaultlinkClasses %}
+              {% set linkClasses = ((page.url starts with item.link_url and item.link_url != '/') or page.url == '/' and item.link_url == '/') ? activeLinkClasses : defaultlinkClasses %}
               <li class="group relative m-0 p-0 ">
                 <a href="{{item.link_url}}"
                   class="p-2 block  text-teal-500 font-normal text-[14px] font-outfit group uppercase tracking-wider"

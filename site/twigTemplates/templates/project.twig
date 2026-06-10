@@ -5,7 +5,7 @@
 
 {% block main %}
   {% if hero.image %}
-    {{hero(hero.title, hero.subtitle, hero.image, '', '', 'small')}}
+    {{hero(hero.title, hero.subtitle, hero.image, '', '', hero.hero_size)}}
   {% endif %}
 
   {# Goals #}
@@ -13,9 +13,9 @@
       <div class="c-container">
         <div class="flex gap-2 items-center">
         <div class="h-[3px] w-7 bg-yellow"></div>
-        <span class="eyebrow">Project Goals</span>
+        <span class="eyebrow">{{goals_pretitle}}</span>
       </div>
-      <h2 class="h2">What we want to achieve</h2>
+      <h2 class="h2">{{goals_title}}</h2>
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-3 mt-8">
           {% for item in goals %}
             {{goalcard(item.number, item.title, item.pretitle, item.text, item.featured)}}

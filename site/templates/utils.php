@@ -5,6 +5,8 @@ function getHeroFieldset ($page) {
     'title' => $page->hero_fieldset->c_title,
     'subtitle' => $page->hero_fieldset->c_subtitle,
     'image' => $page->hero_fieldset->c_image,
+    'hero_size' => $page->hero_fieldset->hero_size,
+    'multilinetitle' => $page->hero_fieldset->multi_line_title
   ];
 }
 
@@ -16,28 +18,12 @@ function getPartners($pages) {
     $partners_data[] = [
       'title' => $item->title,
       'logo' => $item->logo,
-      'url' => $item->link_url,
-      'page_url' => $item->url
+      'content' => $item->content,
+      'url' => $item->url,
+      'imagetextsections' => $item->imagetext
     ];
   }
   return $partners_data;
-}
-
-
-function getPartnersPins($pages) {
-  $partners = $pages->find('template=partner, sort=sort');
-  $partners_map_pins = [];
-  foreach($partners as $item) {
-    $partners_map_pins[] = [
-      'title' => $item->title,
-      'content' => $item->c_text,
-      'lat' => $item->latitude,
-      'lng' => $item->longitude,
-      'color' => $item->color,
-      'url' => $item->url,
-    ];
-  }
-  return $partners_map_pins;
 }
 
 

@@ -1,0 +1,28 @@
+{% extends "base/base.twig" %}
+{% from "components/hero.twig" import hero %}
+{% from "components/imagetextpartner.twig" import imagetextpartner %}
+
+
+{% block main %}
+<div class="bg-white">
+  {% if hero.image %}
+    {{hero(hero.title, hero.subtitle, hero.image, '', '', hero.hero_size)}}
+  {% endif %}
+  
+  <section class="c-container--small my-12 lg:my-24">
+    <div class="text-center flex justify-center mb-12">
+      <img src={{logo.url}} class="max-w-[350px]">
+    </div>
+    <div class="u-wysiwyg">
+      {{content}}
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-[100px] py-24">
+    {% for item in imagetext %}
+      {{imagetextpartner(item.c_subtitle, item.c_title, item.c_text, item.c_image, item.image_position)}}
+    {% endfor %}
+  </section>
+    
+</div>
+{% endblock %}

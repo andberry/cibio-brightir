@@ -5,7 +5,7 @@
 
 {% block main %}
   {% if hero.image %}
-    {{hero(hero.title, hero.subtitle, hero.image, '', '', 'small')}}
+    {{hero(hero.title, hero.subtitle, hero.image, '', '', hero.hero_size)}}
   {% endif %}
   
   <section class="c-container--small my-12 lg:my-24">

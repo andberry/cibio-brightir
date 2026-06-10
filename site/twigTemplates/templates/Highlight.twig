@@ -5,7 +5,7 @@
 
 {% block main %}
   {% if hero_image %}
-    {{hero(title, 'Highlights', hero_image, '', '', 'small')}}
+    {{hero(title, 'Highlights', hero_image, '', '', hero.hero_size)}}
   {% endif %}
 
   <section class="bg-graylight py-12 lg:py-24">

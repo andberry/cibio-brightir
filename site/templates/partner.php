@@ -3,5 +3,6 @@ include './utils.php';
 
 $tvars['pageTitle'] = $page->title;
 $tvars['hero'] = getHeroFieldset($page);
-$tvars['highlights'] = getHighlights($pages);
+$tvars['logo'] = $page->logo;
 $tvars['content'] = $page->content;
+$tvars['imagetext'] = $page->imagetext;

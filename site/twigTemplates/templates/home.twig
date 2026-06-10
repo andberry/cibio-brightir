@@ -7,45 +7,55 @@
 {% from "components/goalcard.twig" import goalcard %}
 
 {% block main %}
-  {{hero(hero.title, hero.subtitle, hero.image, '', '', 'default', 1)}}
+  {{hero(hero.title, hero.subtitle, hero.image, '', '', hero.hero_size, 1, hero.multilinetitle)}}
 
   {# Goals #}
   <section class="my-12 lg:my-48">
     <div class="c-container">
-    <div class="flex gap-2 items-center">
-      <div class="h-[3px] w-7 bg-yellow"></div>
-      <span class="eyebrow">Project Goals</span>
-    </div>
-    <h2 class="h2">What we want to achieve</h2>
-    <div class="grid grid-cols-1 gap-3 lg:grid-cols-3 mt-8">
-      {% for item in goals %}
-          {{goalcard(item.number, item.title, item.pretitle, item.abstract, item.featured)}}
-        {% endfor %}
-    </div>
+      <div class="flex gap-2 items-center">
+        <div class="h-[3px] w-7 bg-yellow"></div>
+        <span class="eyebrow">{{goals_pretitle}}</span>
+      </div>
+      <h2 class="h2">{{goals_title}}</h2>
+      <div class="grid grid-cols-1 gap-3 lg:grid-cols-3 mt-8">
+        {% for item in goals %}
+            {{goalcard(item.number, item.title, item.pretitle, item.abstract, item.featured)}}
+          {% endfor %}
+      </div>
+      <div class="mt-2 flex justify-end">
+        <a class="p-2 block text-teal-500 font-normal text-[14px] font-outfit group uppercase tracking-wider" href="/project">
+          <span class="relative after:content-[''] after:block after:w-full after:h-[2px] after:bg-teal-500 after:absolute after:top-[calc(100%+2px)] after:left-0 after:opacity-0 after:-translate-y-[2px] group-hover:after:translate-y-0 group-hover:after:opacity-100 after:transition-all after:duration-200 after:ease-out">Learn more</span>
+        </a>
+      </div>
     </div>
   </section>
     
   {# Image Text Section #}
   {% for item in imagetextsections %}
-    {{imagetext(item.c_title, item.c_text, item.c_image, item.image_position)}}
+    {{imagetext(item.c_subtitle, item.c_title, item.c_text, item.c_image, item.image_position)}}
   {% endfor %}
     
   {# Highlights #}
   {% if highlights|length > 0 %}
-  <section class="bg-teal-800 py-16 px-10">
+  <section class="bg-teal-800 py-16">
     <div class="c-container">
       <div class="flex items-center gap-2 mb-2">
         <div class="w-5 h-[2px] bg-yellow"></div>
-        <span class="font-dmsans font-semibold text-[10px] uppercase tracking-[.14em] text-teal-400 opacity-70">Latest News</span>
+        <span class="font-dmsans font-semibold text-[10px] uppercase tracking-[.14em] text-teal-400 opacity-70">{{highlights_pretitle}}</span>
       </div>
       <h2 class="font-outfit font-bold text-[28px] tracking-tight text-white mb-8 leading-tight">
-        Recent highlights
+        {{highlights_title}}
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
         {% for item in highlights %}
           {{highlightcard(item.url, item.title, item.subtitle, item.image)}}
         {% endfor %}
+      </div>
+      <div class="mt-2 flex justify-end">
+        <a class="p-2 block text-white font-normal text-[14px] font-outfit group uppercase tracking-wider" href="/highlights">
+          <span class="relative after:content-[''] after:block after:w-full after:h-[2px] after:bg-white after:absolute after:top-[calc(100%+2px)] after:left-0 after:opacity-0 after:-translate-y-[2px] group-hover:after:translate-y-0 group-hover:after:opacity-100 after:transition-all after:duration-200 after:ease-out">Learn more</span>
+        </a>
       </div>
     </div>
   </section>
@@ -54,15 +64,14 @@
   {# Partners #}
   <section class="py-12 lg:py-24 bg-white">
     <div class="c-container">
-      <div class="flex gap-24 items-center">
+      <div class="flex gap-12 md:gap-24 items-center flex-col md:flex-row">
         <h2 class="h3">{{partners.title}}</h2>
-        <div class="flex items-center gap-16">
-          <div class="w-[160px]">
-            <img src="/site/assets/files/images/unitrento-logo.jpg" alt="" class="w-full block">
-          </div>
-          <div class="w-[160px]">
-            <img src="/site/assets/files/images/4k-mems-logo.png" alt="" class="w-full block">
-          </div>
+        <div class="flex items-center gap-8 md:gap-16 flex-col md:flex-row">
+        {% for item in partners.items %}
+          <a href={{item.url}} class=" block w-[160px]">
+            <img src={{item.logo.url}} alt={{item.title}} class="w-full block">
+          </a>
+        {% endfor %}
         </div>
       </div>
     </div>

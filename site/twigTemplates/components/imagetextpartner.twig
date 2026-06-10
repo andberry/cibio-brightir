@@ -1,33 +1,37 @@
-{% macro imagetext(pretitle, title, text, image, imageposition) %}
-	<section class="c-imagetext relative my-12 lg:mt-20 lg:mb-40 z-0 ">
+{% macro imagetextpartner(pretitle, title, text, image, imageposition) %}
+	<section class="c-imagetext relative z-0 ">
 	
 		<div class="c-container">
 			<div class="rounded-md border border-teal-100 overflow-hidden">
 			<div class="lg:grid grid-cols-6">
 			{% if imageposition == '2' %}
 				<div class="col-span-3">
-					<div class=" p-6 lg:p-8 xl:p-16 h-full lg:relative flex flex-col gap-4 justify-center bg-white">
+					<div class=" p-6 lg:p-8 xl:p-16 h-full lg:relative flex flex-col gap-4 justify-center bg-teal-50">
 						<div class="h-[3px] w-7 bg-yellow"></div>
+						{% if pretitle %}
 						<p class="font-dmsans text-[12px] font-medium uppercase">
 							{{pretitle}}
 						</p>
+						{% endif %}
 						<h3 class="h3 mb-4 mt-0">{{title}}</h3>
 						<div class="u-wysiwyg">{{text}}</div>
 					</div>
 				</div>
-				<div class="col-span-3 ">
-					<img src="{{image.url}}" alt="" class="w-full h-full object-cover object-center ">
+				<div class="col-span-3 p-24">
+					<img src="{{image.url}}" alt="" class="">
 				</div>
 			{% else %}
-			<div class="col-span-3 ">
-					<img src="{{image.url}}" alt="" class="w-full h-full object-cover object-center ">
+			<div class="col-span-3 p-24">
+					<img src="{{image.url}}" alt="" class="">
 				</div>
 				<div class="col-span-3">
-					<div class=" p-6 lg:p-8 xl:p-16 h-full lg:relative flex flex-col gap-4 justify-center">
+					<div class=" p-6 lg:p-8 xl:p-16 h-full lg:relative flex flex-col gap-4 justify-center bg-teal-50">
 						<div class="h-[3px] w-7 bg-yellow"></div>
-						<p class="font-dmsans text-[10px] font-medium uppercase">
-							About the project
+						{% if pretitle %}
+						<p class="font-dmsans text-[12px] font-medium uppercase">
+							{{pretitle}}
 						</p>
+						{% endif %}
 						<h3 class="h3 mb-4 mt-0">{{title}}</h3>
 						<div class="u-wysiwyg">{{text}}</div>
 					</div>
