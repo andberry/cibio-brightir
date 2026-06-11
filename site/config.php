@@ -140,5 +140,4 @@ $config->httpHosts = array('cibio-brightir.ddev.site');
  * Should be true for development sites and false for live/production sites. 
  * 
  */
-$config->debug = true;
-
+$config->debug = false;
