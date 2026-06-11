@@ -1,4 +1,5 @@
 <?php namespace ProcessWire;
+// die('maintenance mode');
 
 /**
  * ProcessWire Bootstrap
